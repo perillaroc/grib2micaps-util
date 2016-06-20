@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <multi_task_loader>
+    <!--
+        pool_size：int，同时运行的进程数
+            注意： task_list 中的 task 个数可以大于 pool_size
+    -->
     <pool_size>2</pool_size>
+    <!--
+        task_list：由多个 task 节点组成，表示同时运行的任务列表
+    -->
     <task_list>
+        <!--
+            task
+                start_time: YYYYMMDDHH，起报时间
+                start_forecast_hour: HH，转码的起始时效
+                end_forecast：HH，转码的终止时效
+                run_dir：程序运行的目录
+                program：执行的程序文件路径
+        -->
         <task>
             <start_time>2016061708</start_time>
             <start_forecast_hour>0</start_forecast_hour>
