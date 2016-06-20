@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<multi_task_loader>
+    <pool_size>5</pool_size>
+    <task_list>
+        <task>
+            <start_time>2016061708</start_time>
+            <start_forecast_hour>0</start_forecast_hour>
+            <end_forecast_hour>3</end_forecast_hour>
+            <run_dir>D:/windroc/project/2016/grib2micaps/grapesGfs_grib2micaps_v3.9.4_0</run_dir>
+            <program>grib2micaps.exe</program>
+        </task>
+        <task>
+            <start_time>2016061708</start_time>
+            <start_forecast_hour>0</start_forecast_hour>
+            <end_forecast_hour>3</end_forecast_hour>
+            <run_dir>D:/windroc/project/2016/grib2micaps/grapesGfs_grib2micaps_v3.9.4_1</run_dir>
+            <program>grib2micaps.exe</program>
+        </task>
+        <task>
+            <start_time>2016061708</start_time>
+            <start_forecast_hour>0</start_forecast_hour>
+            <end_forecast_hour>3</end_forecast_hour>
+            <run_dir>D:/windroc/project/2016/grib2micaps/grapesGfs_grib2micaps_v3.9.4_2</run_dir>
+            <program>grib2micaps.exe</program>
+        </task>
+        <task>
+            <start_time>2016061708</start_time>
+            <start_forecast_hour>0</start_forecast_hour>
+            <end_forecast_hour>3</end_forecast_hour>
+            <run_dir>D:/windroc/project/2016/grib2micaps/grapesGfs_grib2micaps_v3.9.4_3</run_dir>
+            <program>grib2micaps.exe</program>
+        </task>
+        <task>
+            <start_time>2016061708</start_time>
+            <start_forecast_hour>0</start_forecast_hour>
+            <end_forecast_hour>3</end_forecast_hour>
+            <run_dir>D:/windroc/project/2016/grib2micaps/grapesGfs_grib2micaps_v3.9.4_4</run_dir>
+            <program>grib2micaps.exe</program>
+        </task>
+    </task_list>
+</multi_task_loader>
