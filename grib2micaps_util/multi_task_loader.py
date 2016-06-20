@@ -1,7 +1,7 @@
+import argparse
 import subprocess
 from multiprocessing import Pool
 import os
-import sys
 import datetime
 from xml.dom import minidom
 from xml.dom import Node
@@ -62,11 +62,28 @@ def run_grib2micaps(no, task_param):
 
 
 def main():
-    print('Loader start...')
+    default_config_file_name = 'multi_task_loader.config.xml'
+    default_config_file_path = os.path.dirname(__file__) + '/conf/' + default_config_file_name
+
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description="""\
+DESCRIPTION
+    Load multi task using python's multiprocess module.""")
+    parser.add_argument("-c","--config", help="config file path, defaule is "+default_config_file_path)
+
+    args = parser.parse_args()
+
+    config_file_path = default_config_file_path
+    if args.config:
+        config_file_path = args.config
+
+    print('load config form ' + config_file_path)
     loader_start_time = datetime.datetime.now()
 
-    config = Config(os.path.dirname(__file__) + '/conf/multi_task_loader.config.xml')
+    config = Config(config_file_path)
 
+    print('Loader start...')
     p = Pool(config.config_dict['pool_size'])
 
     for i in range(len(config.config_dict['task_list'])):
