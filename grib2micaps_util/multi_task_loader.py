@@ -1,18 +1,34 @@
 import argparse
-import subprocess
+import datetime
 from multiprocessing import Pool
 import os
-import datetime
+import subprocess
 from xml.dom import minidom
 from xml.dom import Node
 
+"""
+config file 的层次结构
+    multi_task_loader:
+
+        pool_size：int，同时运行的进程数
+            注意： task_list 中的 task 个数可以大于 pool_size
+
+        task_list：由多个 task 节点组成，表示同时运行的任务列表
+            task
+                start_time: YYYYMMDDHH，起报时间
+                start_forecast_hour: HH，转码的起始时效
+                end_forecast：HH，转码的终止时效
+                run_dir：程序运行的目录
+                program：执行的程序文件路径
+"""
+
 
 class Config(object):
-    def __init__(self, config_path):
+    def __init__(self, config_path: str):
         self.config_path = config_path
         self.config_dict = self.load_config()
 
-    def load_config(self):
+    def load_config(self) -> dict:
         config_dict = dict()
         doc = minidom.parse(self.config_path)
         root = doc.documentElement
@@ -37,7 +53,7 @@ class Config(object):
         return config_dict
 
 
-def run_grib2micaps(no, task_param):
+def run_grib2micaps(no: int, task_param: dict):
 
     print('start task {no} on {pid}...'.format(no=no, pid=os.getpid()))
     os.chdir(task_param['run_dir'])
