@@ -79,7 +79,7 @@ def run_grib2micaps(no: int, task_param: dict):
 
 def main():
     default_config_file_name = 'multi_task_loader.config.xml'
-    default_config_file_path = os.path.dirname(__file__) + '/' + default_config_file_name
+    default_config_file_path = os.path.dirname(__file__) + './' + default_config_file_name
 
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
