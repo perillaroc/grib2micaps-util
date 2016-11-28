@@ -1,1 +1,0 @@
-D:\lang\python\python35\python.exe D:\windroc\project\2016\grib2micaps\grib2micaps-util\grib2micaps_util\multi_task_loader.py -c D:\windroc\project\2016\grib2micaps\grib2micaps-util\test\one\one.config.xml
